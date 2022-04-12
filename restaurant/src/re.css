@@ -35,7 +35,9 @@
  .a{
      /* background-color: black; */
      margin: auto;
+     height: auto;
      margin-left: 2%;
+     margin-top: 10px;
      justify-content: right;
      margin-right: 5px;
    text-align: right;
