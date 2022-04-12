@@ -1,0 +1,57 @@
+ .fexdiv {
+     display: flex;
+     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+     justify-content: space-evenly;
+ }
+ .img1 {
+     width: 100px;
+     height: 100px;
+     border-radius: 5px;
+     padding: 10px;
+ }
+ .main {
+
+    display: grid;
+    width: 90%;
+    margin: auto;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    margin-top: 20px;
+    gap: 20px; 
+ }
+ h3 {
+     margin-top: 10px;
+     margin-left: 5px;
+     margin-bottom: 0px;
+     color: rgb(213, 86, 86);
+ }
+ p {
+
+    margin-left: 5px; 
+    margin-top: -3px; 
+    color: gray;
+    margin-bottom: 0px;
+ }
+ .a{
+     /* background-color: black; */
+     margin: auto;
+     margin-left: 2%;
+     justify-content: right;
+     margin-right: 5px;
+   text-align: right;
+ }
+ .reating{
+     color: white;
+     
+     background-color: rgb(100, 184, 16);
+     width: 22px;
+      margin-left: 60px;
+      margin-right: 5px;
+     padding: 5px;
+     height: 20px;
+     font-weight: bold;
+     border-radius: 10px;
+    
+     
+    
+ }
