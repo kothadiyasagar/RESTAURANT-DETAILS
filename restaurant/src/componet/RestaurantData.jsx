@@ -1,4 +1,5 @@
 import "../re.css"
+import "../componet/Form"
 
 const RestaurantData =(props)=>{
     console.log(props.item)

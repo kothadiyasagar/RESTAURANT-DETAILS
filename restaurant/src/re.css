@@ -52,8 +52,8 @@
      padding: 5px;
      height: 20px;
      font-weight: bold;
-     border-radius: 10px;
-    
-     
-    
+     border-radius: 10px;  
+ }
+ .as{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
  }
