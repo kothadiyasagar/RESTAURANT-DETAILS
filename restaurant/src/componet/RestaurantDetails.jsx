@@ -18,6 +18,8 @@ var sagar=[]
       setUppend(props)
     }
      const handel4 =(item)=>{
+         item=[...item,...sagar]
+         console.log(item)
         const newItem = item.filter((item,index) => {
             return item.reting>=4;
         });
@@ -27,6 +29,7 @@ var sagar=[]
         setUppend(newItem)
      }
      const handel3 =(item)=>{
+        item=[...item,...sagar]
         const newItem = item.filter((item,index) => {
             return item.reting>=3;
         });
@@ -35,6 +38,7 @@ var sagar=[]
         setUppend(newItem)
      }
      const handel2 =(item)=>{
+        item=[...item,...sagar]
         const newItem = item.filter((item,index) => {
             return item.reting>=2;
         });
@@ -43,6 +47,7 @@ var sagar=[]
         setUppend(newItem)
      }
      const handel1 =(item)=>{
+        item=[...item,...sagar]
         const newItem1 = item.filter((item,index) => {
             return item.reting>=1;
         });
@@ -51,22 +56,43 @@ var sagar=[]
         setUppend(newItem1)
      }
      const card =(item)=>{
+        item=[...item,...sagar]
          const card=item.filter((item,index)=>{
-             return item.payment_method.online=="true"||item.payment_method.card=="card"
+             return item.payment_method==="card" || item.payment_method.online==="true"
          })
          console.log(card)
          setUppend(card)
      }
      const cash =(item)=>{
+        item=[...item,...sagar]
         const cash=item.filter((item,index)=>{
-            return item.payment_method.cash=="true"||item.payment_method.cash=="cash"
+            return item.payment_method.cash=="true"||item.payment_method=="cash"
         })
         console.log(cash)
         setUppend(cash)
     }
     const all =(item)=>{
+        item=[...item,...sagar]
         setUppend(item)
     }
+     const htolow =(item)=>{
+        item=[...item,...sagar]
+        const newItem = item.filter((item,index) => {
+            return item.reting>=4;
+        });
+        newItem.sort((a, b) => b.cost_for_two - a.cost_for_two)
+        setUppend(newItem)
+
+     }
+     const ltohigh =(item)=>{
+        item=[...item,...sagar]
+        const newItem = item.filter((item,index) => {
+            return item.reting>=4;
+        });
+        newItem.sort((a, b) => a.cost_for_two - b.cost_for_two)
+        setUppend(newItem)
+
+     }
      return(
      <>
      <div style={{display:"flex",justifyContent:"space-around"}}>
@@ -82,7 +108,10 @@ var sagar=[]
              <button onClick={()=>cash(props.data)}>Cash Payment</button>
              <button onClick={()=>all(props.data)}>All Payment</button>
          </div>
-    
+          <div>
+              <button onClick={()=>htolow(props.data)}>high to low cost of two</button>
+              <button onClick={()=>ltohigh(props.data)}>low to high cost of two</button>
+          </div>
      </div>
 
 
