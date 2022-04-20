@@ -5,6 +5,7 @@ import "../re.css"
 
 var sagar=[]
  const RestaurantDetails =(props)=>{
+   let[data,setData]=useState(true)
     let [upped,setUppend]=useState(props.data)
     let[FormData, setFormData]=useState([{}])
     const handaleChange = (e)=>{
@@ -95,7 +96,10 @@ var sagar=[]
      }
      return(
      <>
-     <div style={{display:"flex",justifyContent:"space-around"}}>
+     <button onClick={()=>setData(!data)}>{data ?"Add RestaurantData":"home"}</button>
+     {data ?( 
+        <div>
+            <div style={{display:"flex",justifyContent:"space-around"}}>
          <div>
          <button onClick={() =>handel4(props.data)}> 4 star above</button>
      <button onClick={() =>handel3(props.data)}>3 star above</button>
@@ -113,63 +117,67 @@ var sagar=[]
               <button onClick={()=>ltohigh(props.data)}>low to high cost of two</button>
           </div>
      </div>
-
-
-       <div style={{display:"flex"}}>
-           <div className="as" style={{marginLeft:"20px", marginTop:"20px",height:"500px",boxShadow:" rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;"}}>            
-       <form onSubmit={handlesubmit} style={{marginLeft:"20px",marginTop:"10px"}}>
-         <div>
-        <label>Name</label>
-        <br></br>
-         <input type="text"name="name" onChange={handaleChange}/>
-         </div>
-         <div>
-        <label>ImgUrl</label>
-        <br></br>
-         <input type="url"name="img" onChange={handaleChange}/>
-         </div>
-         <div>
-         <label>Rating</label>
-         <br></br>
-         <input type="number"name="reting" onChange={handaleChange}/>
-         </div>
-         <div>
-         <label>payment_method</label>
-         <br></br>
-        <select name="payment_method" onChange={handaleChange}>
-          <option value="cash">cash</option>
-          <option  value="card">card</option>
-          <option  value="all">all</option>
-        </select>
-        <div>
-          <label>reviwes</label>
-          <br></br>
-          <input type="number" name="reviews" onChange={handaleChange}/>
-        </div>
-        <div>
-          <label>categories</label>
-          <input type="text" name="categories" onChange={handaleChange}/>
-        </div>
-        <div>
-          <label>total_votes</label>
-          <br></br>
-          <input type="text" name="total_votes" onChange={handaleChange}/>
-        </div>
-        <div>
-          <label>cost_for_one</label>
-          <br></br>
-          <input type="number" name="cost_for_two" onChange={handaleChange}/>
-        </div>
-        <input type="Submit" name="Submit"/>
-         </div>
-       </form>
-           </div>
-       <div className="main">
+     <div className="main">
              {upped.map((item)=>{
                  return(<RestaurantData key={item.id} item={item}/>)
              })}
          </div>
-       </div>
+        </div>
+      
+):(
+  <div className="as" style={{margin:"auto",marginLeft:"20px", marginTop:"20px",height:"500px",boxShadow:" rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;", width:"300px"}}>            
+  <form onSubmit={handlesubmit} style={{marginLeft:"20px",marginTop:"10px"}}>
+    <div>
+   <label>Name</label>
+   <br></br>
+    <input type="text"name="name" onChange={handaleChange}/>
+    </div>
+    <div>
+   <label>ImgUrl</label>
+   <br></br>
+    <input type="url"name="img" onChange={handaleChange}/>
+    </div>
+    <div>
+    <label>Rating</label>
+    <br></br>
+    <input type="number"name="reting" onChange={handaleChange}/>
+    </div>
+    <div>
+    <label>payment_method</label>
+    <br></br>
+   <select name="payment_method" onChange={handaleChange}>
+     <option value="cash">cash</option>
+     <option  value="card">card</option>
+     <option  value="all">all</option>
+   </select>
+   <div>
+     <label>reviwes</label>
+     <br></br>
+     <input type="number" name="reviews" onChange={handaleChange}/>
+   </div>
+   <div>
+     <label>categories</label>
+     <input type="text" name="categories" onChange={handaleChange}/>
+   </div>
+   <div>
+     <label>total_votes</label>
+     <br></br>
+     <input type="text" name="total_votes" onChange={handaleChange}/>
+   </div>
+   <div>
+     <label>cost_for_one</label>
+     <br></br>
+     <input type="number" name="cost_for_two" onChange={handaleChange}/>
+   </div>
+   <input type="Submit" name="Submit"/>
+    </div>
+  </form>
+      </div>
+)}
+    
+
+          
+      
        
          </>
      )
